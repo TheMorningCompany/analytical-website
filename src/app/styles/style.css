@@ -1,0 +1,144 @@
+.component {
+    position: relative;
+    /*display: inline-block;*/
+}
+
+.header {
+    width: 100%;
+    height: 300px;
+    background: url("https://www.fillmurray.com/1024/1024") center;
+}
+
+.userDetailsContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.statsComponent {
+    width: 240px;
+    height: 300px;
+    background: #f3f3f7;
+    border-radius: 35px;
+}
+
+.latestVideoPerformanceComponent {
+    top: 100px;
+    width: 800px;
+    height: 450px;
+    background: #f3f3f7;
+    border-radius: 35px;
+}
+
+.latestVideoPerformanceComponent .videoThumbnail {
+    position: absolute;
+    border-radius: 35px;
+    margin-top: 10%;
+    left: 25px;
+    width: 300px;
+    height: 166px;
+}
+
+.latestVideoPerformanceComponent .videoTitle {
+    position: absolute;
+    left: 45%;
+    margin-top: 10%;
+    text-align: left;
+    float: left;
+    display: block;
+}
+
+.latestVideoPerformanceComponent .explanation {
+    position: absolute;
+    left: 45%;
+    margin-top: 15%;
+    text-align: left;
+    max-width: 50%;
+}
+
+.latestVideoPerformanceComponent .statsList {
+    position: absolute;
+    text-align: left;
+    list-style: none;
+    left: 0px;
+    top: 250px;
+    width: 100%;
+    line-height: 5%;
+}
+
+.latestVideoPerformanceComponent .statsList li {
+    position: relative;
+    right: 1%;
+}
+
+.latestVideoPerformanceComponent .statsList .statTitle {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.latestVideoPerformanceComponent .statsList .statValue {
+    position: relative;
+    display: block;
+    right: 50px;
+    float: right;
+}
+
+.component .componentTitle {
+    font-size: 1.25em;
+    margin-top: 40px;
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-left: 25px;
+    color: darkslategray;
+    display: block;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.component .componentValue {
+    font-size: 5em;
+    float: left;
+    margin-left: 25px;
+    margin-top: 0;
+    display: block;
+    font-weight: bold;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.stats {
+    position: relative;
+    top: 150px;
+    flex-wrap: wrap;
+}
+
+.summaries {
+    position: relative;
+    top: 150px;
+}
+
+.userDetails {
+    position: relative;
+    left: 10%;
+    top: 86px;
+}
+
+.userDetails img {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.userDetails h1 {
+    color: white;
+    display: inline-block;
+    position: relative;
+    bottom: 64px;
+    transform: translate(0, 25%);
+    margin-left: 50px;
+    font-size: 48px;
+}
