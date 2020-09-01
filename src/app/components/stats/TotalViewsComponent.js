@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {kFormatter} from "../../../util/NumberUtil";
 
-export default class ViewsComponent extends Component {
+export default class TotalViewsComponent extends Component {
     render() {
-        let views = 15665;
+        let views = 4200;
         return (
-            <div className={"component statsComponent viewsComponent"}>
-                <h1 className={"componentTitle"}>Realtime Views</h1>
+            <div className={"component statsComponent totalViewsComponent"}>
+                <h1 className={"componentTitle"}>Total Views</h1>
                 <p className={"componentValue"}>{kFormatter(views)}</p>
             </div>
         );
