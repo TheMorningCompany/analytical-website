@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 import './app/styles/style.css';
 import {
-    LatestVideoPerformanceComponent,
+    CommentActivityComponent,
+    LatestVideoPerformanceComponent, SignInComponent,
     SubscribersComponent,
+    TotalViewsComponent,
     UserDetailsComponent,
     ViewsComponent,
-    WatchHoursComponent,
-    TotalViewsComponent,
-    CommentActivityComponent, ViewSelectorComponent
+    ViewSelectorComponent,
+    WatchHoursComponent
 } from "./app/components";
 import {selectedScreen} from "./app/components/misc/ViewSelectorComponent";
+import {init} from "./util/GoogleApi";
 
 export function useForceUpdate() {
     let [value, setState] = useState(true);
@@ -17,10 +19,12 @@ export function useForceUpdate() {
 }
 
 export default function App() {
+    init().then();
     let forceUpdate = useForceUpdate();
   return (
     <div className="App">
         <div className={"header"}>
+            <SignInComponent />
             <div className={"userDetailsContainer"}>
                 <UserDetailsComponent />
             </div>
@@ -37,7 +41,7 @@ export default function App() {
                     <TotalViewsComponent />
                     <CommentActivityComponent />
                 </div>
-                    <div className={"summaries flex-center"}>
+                <div className={"summaries flex-center"}>
                     <LatestVideoPerformanceComponent />
                 </div>
             </>

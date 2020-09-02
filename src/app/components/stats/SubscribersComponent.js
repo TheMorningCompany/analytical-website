@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
+import {stats} from "../../../index";
 
 export default class SubscribersComponent extends Component {
     render() {
-        let subscribers = 208;
         return (
             <div className={"component statsComponent subscribersComponent"}>
                 <h1 className={"componentTitle"}>Subscribers</h1>
-                <p className={"componentValue"}>{subscribers}</p>
+                <p className={"componentValue"}>{stats["subscribers"] === undefined ? 0 : stats["subscribers"]}</p>
             </div>
         );
     }

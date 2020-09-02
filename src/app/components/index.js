@@ -6,3 +6,4 @@ export {default as CommentActivityComponent} from './stats/CommentActivityCompon
 export {default as LatestVideoPerformanceComponent} from './summaries/LatestVideoPerformanceComponent';
 export {default as UserDetailsComponent} from './misc/UserDetailsComponent';
 export {default as ViewSelectorComponent} from './misc/ViewSelectorComponent';
+export {default as SignInComponent} from './misc/SignInComponent';

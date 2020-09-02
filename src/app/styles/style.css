@@ -9,6 +9,16 @@
     background: url("https://www.fillmurray.com/1024/1024") center;
 }
 
+.signInComponent {
+    position: absolute;
+    font-size: 8px;
+    background: white;
+    border-radius: 15px;
+    width: 100px;
+    text-align: center;
+    right: 0;
+}
+
 .userDetailsContainer {
     width: 100%;
     height: 100%;
@@ -20,6 +30,7 @@
     background: #f3f3f7;
     border-radius: 35px;
     margin-top: 2%;
+    overflow: hidden;
 }
 
 .latestVideoPerformanceComponent {
@@ -41,7 +52,7 @@
 
 .latestVideoPerformanceComponent .videoTitle {
     position: absolute;
-    left: 45%;
+    left: 50%;
     margin-top: 10%;
     text-align: left;
     float: left;
@@ -50,7 +61,7 @@
 
 .latestVideoPerformanceComponent .explanation {
     position: absolute;
-    left: 45%;
+    left: 50%;
     margin-top: 15%;
     text-align: left;
     max-width: 50%;
@@ -127,6 +138,7 @@
     position: relative;
     left: 10%;
     top: 86px;
+    overflow: hidden;
 }
 
 .userDetails img {
@@ -141,7 +153,7 @@
     bottom: 64px;
     transform: translate(0, 25%);
     margin-left: 50px;
-    font-size: 48px;
+    font-size: 3vw;
 }
 
 .viewSelectorComponent {
@@ -154,13 +166,16 @@
     position: relative;
     list-style: none;
     display: flex;
-    gap: 2%;
+    gap: 30px;
+    -webkit-flex: 1;
+    -webkit-column-gap: 30px;
     justify-content: left;
+    flex-wrap: wrap;
 }
 
 .viewSelectorComponent ul::after {
     content: '';
-    width: 46.120%;
+    width: 715px;
     height: 1px;
     position: absolute;
     background: darkgray;
