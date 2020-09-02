@@ -16,7 +16,9 @@
     border-radius: 15px;
     width: 100px;
     text-align: center;
-    right: 0;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
 }
 
 .userDetailsContainer {
@@ -109,7 +111,7 @@
 }
 
 .component .componentValue {
-    font-size: 5em;
+    font-size: 4vw;
     float: left;
     margin-left: 25px;
     margin-top: 0;
