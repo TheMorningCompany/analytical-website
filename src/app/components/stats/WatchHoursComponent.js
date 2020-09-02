@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {kFormatter} from "../../../util/NumberUtil";
+import {stats} from "../../../index";
 
 export default class WatchHoursComponent extends Component {
     render() {
-        let watchHours = 37.2;
         return (
             <div className={"component statsComponent watchHoursComponent"}>
                 <h1 className={"componentTitle"}>Watch Hours</h1>
-                <p className={"componentValue"}>{kFormatter(watchHours)}</p>
+                <p className={"componentValue"}>{kFormatter(stats["hoursWatched"] === undefined ? 0 : stats["hoursWatched"].toFixed(1))}</p>
             </div>
         );
     }

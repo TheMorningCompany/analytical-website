@@ -185,14 +185,14 @@
     z-index: -1;
 }
 
-.viewSelectorComponent ul li {
+.viewSelectorComponent ul a {
     position: relative;
     display: inline-block;
     font-weight: bold;
     cursor: pointer;
 }
 
-.viewSelectorComponent ul li.selected::after {
+.viewSelectorComponent ul a.selected::after {
     content: '';
     width: 100%;
     height: 1px;
@@ -200,4 +200,9 @@
     background: orangered;
     top: 36px;
     left: 0;
+}
+
+.viewSelectorComponent ul a {
+    color: black;
+    text-decoration: none;
 }

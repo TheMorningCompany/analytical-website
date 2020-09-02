@@ -3,6 +3,7 @@ import {stats} from "../../../index";
 
 export default class SubscribersComponent extends Component {
     render() {
+        console.log(stats);
         return (
             <div className={"component statsComponent subscribersComponent"}>
                 <h1 className={"componentTitle"}>Subscribers</h1>

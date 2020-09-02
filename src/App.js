@@ -1,51 +1,47 @@
 import React, {useState} from 'react';
 import './app/styles/style.css';
+import {SignInComponent, SignOutComponent, UserDetailsComponent, ViewSelectorComponent} from "./app/components";
+import {accessToken, channelId, init} from "./util/GoogleApi";
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {
-    CommentActivityComponent,
-    LatestVideoPerformanceComponent, SignInComponent,
-    SubscribersComponent,
-    TotalViewsComponent,
-    UserDetailsComponent,
-    ViewsComponent,
-    ViewSelectorComponent,
-    WatchHoursComponent
-} from "./app/components";
-import {selectedScreen} from "./app/components/misc/ViewSelectorComponent";
-import {init} from "./util/GoogleApi";
-
-export function useForceUpdate() {
-    let [value, setState] = useState(true);
-    return () => setState(!value);
-}
+    AnalyticsPage,
+    CommentsPage,
+    HomePage,
+    MonetizationPage,
+    PlaylistsPage,
+    SubtitlesPage,
+    VideosPage,
+    AuthPage
+} from "./app/pages";
 
 export default function App() {
     init().then();
-    let forceUpdate = useForceUpdate();
   return (
     <div className="App">
-        <div className={"header"}>
-            <SignInComponent />
-            <div className={"userDetailsContainer"}>
-                <UserDetailsComponent />
-            </div>
-            <div className={"viewSelectorContainer"} onClick={forceUpdate}>
+        <BrowserRouter>
+            <div className={"header"}>
+                {accessToken === undefined || accessToken === "" &&
+                    <SignInComponent />
+                }
+                {accessToken !== undefined && accessToken !== "" &&
+                    <SignOutComponent />
+                }
+                <div className={"userDetailsContainer"}>
+                    <UserDetailsComponent />
+                </div>
                 <ViewSelectorComponent/>
             </div>
-        </div>
-        { selectedScreen === 0 &&
-            <>
-                <div className={"stats flex-center"}>
-                    <ViewsComponent />
-                    <SubscribersComponent />
-                    <WatchHoursComponent />
-                    <TotalViewsComponent />
-                    <CommentActivityComponent />
-                </div>
-                <div className={"summaries flex-center"}>
-                    <LatestVideoPerformanceComponent />
-                </div>
-            </>
-        }
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/videos" component={VideosPage}/>
+                <Route exact path="/playlists" component={PlaylistsPage}/>
+                <Route exact path="/analytics" component={AnalyticsPage}/>
+                <Route exact path="/comments" component={CommentsPage}/>
+                <Route exact path="/subtitles" component={SubtitlesPage}/>
+                <Route exact path="/monetization" component={MonetizationPage}/>
+                <Route exact path="/auth" component={AuthPage} />
+            </Switch>
+        </BrowserRouter>
     </div>
   );
 }

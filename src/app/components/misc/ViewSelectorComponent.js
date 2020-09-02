@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {useForceUpdate} from "../../../App";
+import {BrowserRouter, Link} from "react-router-dom";
 
 export let selectedScreen = 0;
 
@@ -16,16 +17,18 @@ export const selectScreen = (screen) => {
 export default class ViewSelectorComponent extends Component {
     render() {
         return (
-            <div className={"component viewSelectorComponent"}>
-                <ul>
-                    <li className={"listEntry 0 selected"} onClick={() => selectScreen(0)}>Dashboard</li>
-                    <li className={"listEntry 1"} onClick={() => selectScreen(1)}>Videos</li>
-                    <li className={"listEntry 2"} onClick={() => selectScreen(2)}>Playlists</li>
-                    <li className={"listEntry 3"} onClick={() => selectScreen(3)}>Analytics</li>
-                    <li className={"listEntry 4"} onClick={() => selectScreen(4)}>Comments</li>
-                    <li className={"listEntry 5"} onClick={() => selectScreen(5)}>Subtitles</li>
-                    <li className={"listEntry 6"} onClick={() => selectScreen(6)}>Monetization</li>
-                </ul>
+            <div className={"viewSelectorContainer"}>
+                <div className={"component viewSelectorComponent"}>
+                        <ul>
+                            <Link className={"listEntry 0 selected"} to={{pathname: "/"}}>Dashboard</Link>
+                            <Link className={"listEntry 1"} to={{pathname: "/videos"}}>Videos</Link>
+                            <Link className={"listEntry 2"} to={{pathname: "/playlists"}}>Playlists</Link>
+                            <Link className={"listEntry 3"} to={{pathname: "/analytics"}}>Analytics</Link>
+                            <Link className={"listEntry 4"} to={{pathname: "/commends"}}>Comments</Link>
+                            <Link className={"listEntry 5"} to={{pathname: "/subtitles"}}>Subtitles</Link>
+                            <Link className={"listEntry 6"} to={{pathname: "/monetization"}}>Monetization</Link>
+                        </ul>
+                </div>
             </div>
         );
     }

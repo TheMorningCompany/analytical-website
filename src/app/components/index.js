@@ -7,3 +7,4 @@ export {default as LatestVideoPerformanceComponent} from './summaries/LatestVide
 export {default as UserDetailsComponent} from './misc/UserDetailsComponent';
 export {default as ViewSelectorComponent} from './misc/ViewSelectorComponent';
 export {default as SignInComponent} from './misc/SignInComponent';
+export {default as SignOutComponent} from './misc/SignOutComponent';
