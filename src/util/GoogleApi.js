@@ -123,7 +123,7 @@ export function oauthSignIn() {
 
     // Parameters to pass to OAuth 2.0 endpoint.
     var params = {'client_id': process.env.REACT_APP_CLIENT_ID,
-        'redirect_uri': 'http://localhost:3000/auth',
+        'redirect_uri': 'http://analytical.themorningcompany.net/',
         'response_type': 'token',
         'scope': 'https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/yt-analytics.readonly',
         'include_granted_scopes': 'false',
