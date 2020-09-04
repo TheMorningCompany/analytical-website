@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './app/styles/style.css';
 import {SignInComponent, SignOutComponent, UserDetailsComponent, ViewSelectorComponent} from "./app/components";
-import {accessToken, channelId, init} from "./util/GoogleApi";
+import {accessToken, init} from "./util/GoogleApi";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {
     AnalyticsPage,
@@ -10,8 +10,7 @@ import {
     MonetizationPage,
     PlaylistsPage,
     SubtitlesPage,
-    VideosPage,
-    AuthPage
+    VideosPage
 } from "./app/pages";
 
 export default function App() {
@@ -39,7 +38,6 @@ export default function App() {
                 <Route exact path="/comments" component={CommentsPage}/>
                 <Route exact path="/subtitles" component={SubtitlesPage}/>
                 <Route exact path="/monetization" component={MonetizationPage}/>
-                <Route exact path="/auth" component={AuthPage} />
             </Switch>
         </BrowserRouter>
     </div>

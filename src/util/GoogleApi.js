@@ -14,16 +14,17 @@ export const setAccessToken = (token) => {
 export const init = async () => {
     console.log("INITIALIZING GOOGLE API");
     apiKey = process.env.REACT_APP_API_KEY;
-    if (localStorage.getItem("access_token"))
+    let localToken = localStorage.getItem("access_token");
+    if (localToken !== "" && localToken !== undefined && localToken !== null)
         accessToken = localStorage.getItem("access_token");
 }
 
 export const createUrlDataAPI = (endpoint) => {
-    return `https://www.googleapis.com/youtube/v3/${endpoint}?key=${apiKey}&id=${channelId}`;
+    return `https://www.googleapis.com/youtube/v3/${endpoint}?mine=${true}&access_token=${accessToken}`;
 }
 
 export const getChannel = async () => {
-    if (accessToken === "") return undefined;
+    if (accessToken === "" || accessToken === undefined) return undefined;
 
 
     let today = new Date();
@@ -35,20 +36,38 @@ export const getChannel = async () => {
 
     let metrics = "annotationClickThroughRate,annotationCloseRate,averageViewDuration,comments,dislikes,estimatedMinutesWatched,likes,shares,subscribersGained,subscribersLost,views"
     let url = `https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&metrics=${metrics}&endDate=${today}&startDate=2005-02-14&access_token=${accessToken}`;
-    console.log("MAKING REQUEST WITH URL", url);
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+        console.log("MAKING REQUEST WITH URL", url);
+    }
     return await axios.get(url)
         .then((res) => {
             return res.data;
         });
 }
 
-export const getChannelStats = async () => {
+export const getChannelData = async () => {
 
-    let url = createUrlDataAPI('channels') + "&part=statistics";
+    let url = createUrlDataAPI('channels') + "&part=snippet";
     return await axios.get(url)
         .then((res) => {
-            return res.data["items"][0]["statistics"];
+            return res.data["items"][0];
         }).catch((err) => console.log(err));
+}
+
+export const getChannelId = (dataObject) => {
+    return dataObject["id"];
+}
+
+export const getChannelName = (dataObject) => {
+    return dataObject["snippet"]["title"];
+}
+
+export const getChannelDescription = (dataObject) => {
+    return dataObject["snippet"]["description"];
+}
+
+export const getChannelThumbnail = (dataObject, resolution = "high") => {
+    return dataObject["snippet"]["thumbnails"][resolution]["url"];
 }
 
 export const getStatIndex = (name, statsObject) => {
@@ -123,7 +142,7 @@ export function oauthSignIn() {
 
     // Parameters to pass to OAuth 2.0 endpoint.
     var params = {'client_id': process.env.REACT_APP_CLIENT_ID,
-        'redirect_uri': 'http://analytical.themorningcompany.net/',
+        'redirect_uri': !process.env.NODE_ENV || process.env.NODE_ENV === 'development' ? 'http://localhost:3000/' : 'https://analytical.themorningcompany.net/',
         'response_type': 'token',
         'scope': 'https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/yt-analytics.readonly',
         'include_granted_scopes': 'false',

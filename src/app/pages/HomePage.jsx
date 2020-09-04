@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {
+    AuthComponent,
     CommentActivityComponent, LatestVideoPerformanceComponent,
     SubscribersComponent,
     TotalViewsComponent,
@@ -10,6 +11,7 @@ import {
 export default function HomePage() {
     return (
         <div>
+            <AuthComponent />
             <div className={"stats flex-center"}>
                 <ViewsComponent/>
                 <SubscribersComponent/>

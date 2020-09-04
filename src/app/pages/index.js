@@ -5,4 +5,3 @@ export {default as AnalyticsPage} from './AnalyticsPage';
 export {default as CommentsPage} from './CommentsPage';
 export {default as SubtitlesPage} from './SubtitlesPage';
 export {default as MonetizationPage} from './MonetizationPage';
-export {default as AuthPage} from './AuthPage';

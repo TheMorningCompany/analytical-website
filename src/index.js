@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {getStats} from "./app/components/stats/StatsHandler";
+import {accessToken} from "./util/GoogleApi";
 
 export let stats = {};
 
@@ -20,6 +21,13 @@ async function renderApp() {
 renderApp();
 
 setTimeout(renderApp, 1000);
+let refreshInterval = setInterval(() => {
+    let shouldRefreshComponent = accessToken !== undefined && accessToken !== "";
+    if (shouldRefreshComponent) {
+        renderApp();
+        clearInterval(refreshInterval);
+    }
+}, 1000);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
