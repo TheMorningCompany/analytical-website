@@ -165,11 +165,13 @@
 }
 
 .viewSelectorComponent ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
     list-style: none;
-    display: flex;
     gap: 30px;
-    -webkit-flex: 1;
+    -webkit-flex: 1 1 auto;
     -webkit-column-gap: 30px;
     justify-content: left;
     flex-wrap: wrap;

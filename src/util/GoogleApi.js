@@ -24,8 +24,17 @@ export const createUrlDataAPI = (endpoint) => {
 
 export const getChannel = async () => {
     if (accessToken === "") return undefined;
+
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+
+    today = yyyy + "-" + mm + "-" + dd;
+
     let metrics = "annotationClickThroughRate,annotationCloseRate,averageViewDuration,comments,dislikes,estimatedMinutesWatched,likes,shares,subscribersGained,subscribersLost,views"
-    let url = `https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&metrics=${metrics}&endDate=2020-09-01&startDate=2005-02-14&access_token=${accessToken}`;
+    let url = `https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&metrics=${metrics}&endDate=${today}&startDate=2005-02-14&access_token=${accessToken}`;
     console.log("MAKING REQUEST WITH URL", url);
     return await axios.get(url)
         .then((res) => {
