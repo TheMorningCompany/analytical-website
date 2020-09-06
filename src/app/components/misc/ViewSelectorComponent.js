@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {useForceUpdate} from "../../../App";
+import {darkMode, useForceUpdate} from "../../../App";
 import {BrowserRouter, Link} from "react-router-dom";
 
 export let selectedScreen = 0;

@@ -47,7 +47,7 @@ export const getChannel = async () => {
 
 export const getChannelData = async () => {
 
-    let url = createUrlDataAPI('channels') + "&part=snippet";
+    let url = createUrlDataAPI('channels') + "&part=snippet,brandingSettings";
     return await axios.get(url)
         .then((res) => {
             return res.data["items"][0];
@@ -68,6 +68,10 @@ export const getChannelDescription = (dataObject) => {
 
 export const getChannelThumbnail = (dataObject, resolution = "high") => {
     return dataObject["snippet"]["thumbnails"][resolution]["url"];
+}
+
+export const getBannerUrl = (dataObject, type = "bannerImageUrl") => {
+    return dataObject["brandingSettings"]["image"][type];
 }
 
 export const getStatIndex = (name, statsObject) => {

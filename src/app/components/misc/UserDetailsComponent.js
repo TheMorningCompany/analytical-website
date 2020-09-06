@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import {stats} from "../../../index";
+import {darkMode} from "../../../App";
 
 export default class UserDetailsComponent extends Component {
     render() {
         let defaultIcon = "https://eu.ui-avatars.com/api/?size=128";
+        let defaultBanner = "https://www.fillmurray.com/1024/1024"
         return (
-            <div className={"userDetails"}>
-                <img src={stats["channelProfilePicture"] === undefined ? defaultIcon : stats["channelProfilePicture"]} width={128}/>
+            <div className={"userDetails"} style={{left: 0}}>
+                {/*<img src={stats["channelBannerImage"] === undefined ? "" : stats["channelBannerImage"]} className={"bannerImage"}/>*/}
+                <img src={stats["channelProfilePicture"] === undefined ? "" : stats["channelProfilePicture"]} width={128} className={"profileImage"}/>
                 <h1>{stats["channelName"] === undefined ? "Sign In!" : stats["channelName"]}</h1>
             </div>
         );

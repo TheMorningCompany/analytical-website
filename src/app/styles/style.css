@@ -6,24 +6,18 @@
 .header {
     width: 100%;
     height: 300px;
-    background: url("https://www.fillmurray.com/1024/1024") center;
+    /*background: white center;*/
 }
 
 .signInComponent {
     position: absolute;
     font-size: 8px;
-    background: white;
     border-radius: 15px;
     width: 100px;
     text-align: center;
     right: 8px;
     top: 8px;
     cursor: pointer;
-}
-
-.userDetailsContainer {
-    width: 100%;
-    height: 100%;
 }
 
 .statsComponent {
@@ -138,24 +132,42 @@
 
 .userDetails {
     position: relative;
-    left: 10%;
     top: 86px;
     overflow: hidden;
-}
-
-.userDetails img {
-    display: inline-block;
-    border-radius: 50%;
+    height: 300px;
+    width: 100%;
+    color: black;
 }
 
 .userDetails h1 {
-    color: white;
+    color: black;
     display: inline-block;
     position: relative;
     bottom: 64px;
+    left: calc(10% + 16px);
     transform: translate(0, 25%);
     margin-left: 50px;
     font-size: 3vw;
+}
+
+.userDetails .bannerImage {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    /*height: 100%;*/
+    overflow: hidden;
+    border-radius: 0;
+    left: 0;
+    transform: translate(-10%, -25%);
+    filter: brightness(0.75);
+    /*background-repeat: repeat;*/
+}
+
+.userDetails .profileImage {
+    position: relative;
+    z-index: 100;
+    left: 10%;
+    border-radius: 50%;
 }
 
 .viewSelectorComponent {
@@ -207,4 +219,23 @@
 .viewSelectorComponent ul a {
     color: black;
     text-decoration: none;
+}
+
+@media(prefers-color-scheme: dark) {
+    body, .header {
+        background: black;
+    }
+    .viewSelectorComponent ul a {
+        color: white;
+    }
+    .statsComponent {
+        background: #191919;
+        color: white;
+    }
+    .component .componentTitle {
+        color: white;
+    }
+    .userDetails h1 {
+        color: white;
+    }
 }

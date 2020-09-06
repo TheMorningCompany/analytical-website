@@ -13,6 +13,8 @@ import {
     VideosPage
 } from "./app/pages";
 
+export let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 export default function App() {
     init().then();
   return (
@@ -25,9 +27,7 @@ export default function App() {
                 {accessToken !== undefined && accessToken !== "" &&
                     <SignOutComponent />
                 }
-                <div className={"userDetailsContainer"}>
-                    <UserDetailsComponent />
-                </div>
+                <UserDetailsComponent />
                 <ViewSelectorComponent/>
             </div>
             <Switch>

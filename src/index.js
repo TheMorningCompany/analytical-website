@@ -16,11 +16,16 @@ async function renderApp() {
         document.getElementById('root')
     );
     stats = await getStats();
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+        console.log(stats);
+    }
 }
 
 renderApp();
 
-setTimeout(renderApp, 1000);
+window.onload = () => {
+    renderApp();
+}
 let refreshInterval = setInterval(() => {
     let shouldRefreshComponent = accessToken !== undefined && accessToken !== "";
     if (shouldRefreshComponent) {

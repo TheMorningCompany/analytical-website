@@ -1,4 +1,5 @@
 import {
+    getBannerUrl,
     getChannel, getChannelData, getChannelDescription, getChannelId, getChannelName,
     getChannelStats, getChannelThumbnail,
     getComments,
@@ -18,6 +19,7 @@ export async function getStats() {
         channelName: getChannelName(channelData),
         channelDescription: getChannelDescription(channelData),
         channelProfilePicture: getChannelThumbnail(channelData),
+        channelBannerImage: getBannerUrl(channelData, "bannerMobileExtraHdImageUrl"),
         views: getViews(channelStats),
         subscribers: getSubscriberCount(channelStats),
         comments: getComments(channelStats),

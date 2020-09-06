@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {kFormatter} from "../../../util/NumberUtil";
+import {darkMode} from "../../../App";
 
 export default class ViewsComponent extends Component {
     render() {
