@@ -1,10 +1,11 @@
 language: node_js
 node_js:
     - 'stable'
-cache:
-    directories:
-        - node_modules
-script:
+# cache:
+#     directories:
+#         - node_modules
+install:
     - npm cache clean --force
     - npm install
+script:
     - npm run build
