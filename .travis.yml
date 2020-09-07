@@ -8,7 +8,7 @@ before_install:
     - docker build .
 
 script:
-    - docker run -e CI=true npm run test
+    - docker run npm run test
 
 after_success:
-    - docker build -t indreklasn/my-react-docker-app .
+    - docker build .
