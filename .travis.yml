@@ -7,8 +7,8 @@ services:
 before_install:
     - docker build -t pepperlola/analytical-website .
 
-script:
-    - docker run -e CI=true pepperlola/analytical-website npm run test
+# script:
+#     - docker run -e CI=true pepperlola/analytical-website npm run test
 
 after_success:
     - docker build .
