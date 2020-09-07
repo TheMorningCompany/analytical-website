@@ -5,10 +5,10 @@ services:
     - docker
 
 before_install:
-    - docker build .
+    - docker build -t pepperlola/analytical-website .
 
 script:
-    - docker run -e CI=true themorningcompany/analytical-website npm run test
+    - docker run -e CI=true pepperlola/analytical-website npm run test
 
 after_success:
     - docker build .
