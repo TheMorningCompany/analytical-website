@@ -18,6 +18,8 @@
     right: 8px;
     top: 8px;
     cursor: pointer;
+    background: black;
+    color: white;
 }
 
 .statsComponent {
@@ -237,5 +239,9 @@
     }
     .userDetails h1 {
         color: white;
+    }
+    .signInComponent {
+        background: white;
+        color: black;
     }
 }
