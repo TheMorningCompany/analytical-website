@@ -12,9 +12,9 @@ before_install:
 
 after_success:
     - docker build .
-    - docker run pepperlola/analytical-website wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-    - docker run pepperlola/analytical-website chmod +x send.sh
-    - docker run pepperlola/analytical-website ./send.sh success $WEBHOOK_URL
+    - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+    - chmod +x send.sh
+    - ./send.sh success $WEBHOOK_URL
 
 after_failure:
     - docker run pepperlola/analytical-website wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
