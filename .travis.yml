@@ -4,17 +4,20 @@ sudo: required
 services:
     - docker
 
+os:
+    - linux
+
 before_install:
     - docker build -t pepperlola/analytical-website .
 
 after_success:
-    - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-    - chmod +x send.sh
-    - ./send.sh success $WEBHOOK_URL
+    - docker run pepperlola/analytical-website wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+    - docker run pepperlola/analytical-website chmod +x send.sh
+    - docker run pepperlola/analytical-website ./send.sh success $WEBHOOK_URL
 after_failure:
-    - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-    - chmod +x send.sh
-    - ./send.sh failure $WEBHOOK_URL
+    - docker run pepperlola/analytical-website wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+    - docker run pepperlola/analytical-website chmod +x send.sh
+    - docker run pepperlola/analytical-website ./send.sh failure $WEBHOOK_URL
 
 # script:
 #     - docker run -e CI=true pepperlola/analytical-website npm run test
