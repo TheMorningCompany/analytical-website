@@ -13,19 +13,19 @@
     position: absolute;
     font-size: 8px;
     border-radius: 15px;
-    width: 100px;
+    width: 320px;
     text-align: center;
     right: 8px;
     top: 8px;
     cursor: pointer;
-    background: black;
-    color: white;
+    background: #F4F4F4;
+    color: #CD6072;
 }
 
 .statsComponent {
     width: 240px;
     height: 300px;
-    background: #f3f3f7;
+    background: #ffffff;
     border-radius: 35px;
     margin-top: 2%;
     overflow: hidden;
@@ -35,7 +35,7 @@
     top: 100px;
     width: 800px;
     height: 450px;
-    background: #f3f3f7;
+    background: #ffffff;
     border-radius: 35px;
 }
 
@@ -225,13 +225,13 @@
 
 @media(prefers-color-scheme: dark) {
     body, .header {
-        background: black;
+        background: #0D0D0D;
     }
     .viewSelectorComponent ul a {
         color: white;
     }
     .statsComponent {
-        background: #191919;
+        background: #1D1D1D;
         color: white;
     }
     .component .componentTitle {
@@ -241,7 +241,7 @@
         color: white;
     }
     .signInComponent {
-        background: white;
-        color: black;
+        background: #CD6072;
+        color: white;
     }
 }
