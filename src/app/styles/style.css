@@ -10,19 +10,19 @@
 }
 
 body {
-  background: #f4f4f4;
+    background: #f4f4f4;
 }
-
 .signInComponent {
     position: absolute;
     font-size: 8px;
     border-radius: 15px;
-    width: 320px;
+    width: 266px;
+    height: 45px;
     text-align: center;
-    right: 8px;
-    top: 8px;
+    right: 12px;
+    top: 12px;
     cursor: pointer;
-    background: #CD6072;
+    background-image: linear-gradient(to right, #C6668D, #D35B5B);
     color: #F4F4F4;
     text-transform: lowercase;
 }
@@ -43,6 +43,7 @@ body {
     background: #ffffff;
     border-radius: 35px;
     text-transform: lowercase;
+    
 }
 
 .latestVideoPerformanceComponent .videoThumbnail {
@@ -247,7 +248,7 @@ body {
         color: white;
     }
     .signInComponent {
-        background: #CD6072;
+        background-image: linear-gradient(to right, #C6668D, #D35B5B);
         color: white;
     }
     .latestVideoPerformanceComponent {
