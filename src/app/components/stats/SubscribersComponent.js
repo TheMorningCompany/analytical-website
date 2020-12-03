@@ -1,14 +1,10 @@
-import React, {Component} from 'react';
-import {stats} from "../../../index";
+import React from 'react';
 
-export default class SubscribersComponent extends Component {
-    render() {
-        console.log(stats);
-        return (
-            <div className={"component statsComponent subscribersComponent"}>
-                <h1 className={"componentTitle"}>Subscribers</h1>
-                <p className={"componentValue"}>{stats["subscribers"] === undefined ? 0 : stats["subscribers"]}</p>
-            </div>
-        );
-    }
+export const SubscribersComponent = ({ subscribers }) => {
+    return (
+        <div className={"component statsComponent subscribersComponent"}>
+            <h1 className={"componentTitle"}>Subscribers</h1>
+            <p className={"componentValue"}>{subscribers === undefined ? 0 : subscribers}</p>
+        </div>
+    );
 }

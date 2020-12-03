@@ -1,5 +1,3 @@
-import {stats} from "../index";
-
 const axios = require('axios');
 
 export let apiKey = "";
@@ -37,6 +35,34 @@ export const getChannel = async () => {
     let metrics = "annotationClickThroughRate,annotationCloseRate,averageViewDuration,comments,dislikes,estimatedMinutesWatched,likes,shares,subscribersGained,subscribersLost,views"
     let url = `https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&metrics=${metrics}&endDate=${today}&startDate=2005-02-14&access_token=${accessToken}`;
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+        // console.log("MAKING REQUEST WITH URL", url);
+    }
+    return await axios.get(url)
+        .then((res) => {
+            return res.data;
+        });
+}
+
+export const getChannel24H = async () => {
+    if (accessToken === "" || accessToken === undefined) return undefined;
+
+
+    let today = new Date();
+    let yesterday = new Date();
+    yesterday.setDate(today.getDate() - 2);
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+    let yesterday_dd = String(yesterday.getDate()).padStart(2, '0'); // yesterday dd
+    let yesterday_mm = String(yesterday.getMonth() + 1).padStart(2, '0'); // yesterday mm
+    let yesterday_yyyy = yesterday.getFullYear(); // yesterday yyyy
+
+    today = yyyy + "-" + mm + "-" + dd;
+    yesterday = yesterday_yyyy + "-" + yesterday_mm + "-" + yesterday_dd;
+
+    let metrics = "annotationClickThroughRate,annotationCloseRate,averageViewDuration,comments,dislikes,estimatedMinutesWatched,likes,shares,subscribersGained,subscribersLost,views"
+    let url = `https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&metrics=${metrics}&endDate=${today}&startDate=${yesterday}&access_token=${accessToken}`;
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
         console.log("MAKING REQUEST WITH URL", url);
     }
     return await axios.get(url)
@@ -71,6 +97,7 @@ export const getChannelThumbnail = (dataObject, resolution = "high") => {
 }
 
 export const getBannerUrl = (dataObject, type = "bannerImageUrl") => {
+    console.log(dataObject);
     return dataObject["brandingSettings"]["image"][type];
 }
 

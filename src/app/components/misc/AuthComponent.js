@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import {useLocation, useHistory} from 'react-router-dom';
+import React from 'react';
+import {useHistory, useLocation} from 'react-router-dom';
 import {accessToken, setAccessToken} from "../../../util/GoogleApi";
 
 function useQuery() {
     return new URLSearchParams(useLocation().hash);
 }
 
-export default function AuthComponent() {
+export const AuthComponent = () => {
     let history = useHistory();
     let query = useQuery();
     let token = query.get("access_token");
