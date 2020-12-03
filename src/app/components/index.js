@@ -1,11 +1,11 @@
-export {ViewsComponent} from './stats/ViewsComponent';
-export {SubscribersComponent} from './stats/SubscribersComponent';
-export {WatchHoursComponent} from './stats/WatchHoursComponent';
-export {TotalViewsComponent} from './stats/TotalViewsComponent';
-export {CommentActivityComponent} from './stats/CommentActivityComponent';
-export {LatestVideoPerformanceComponent} from './summaries/LatestVideoPerformanceComponent';
-export {UserDetailsComponent} from './misc/UserDetailsComponent';
-export {ViewSelectorComponent} from './misc/ViewSelectorComponent';
-export {SignInComponent} from './misc/SignInComponent';
-export {SignOutComponent} from './misc/SignOutComponent';
-export {AuthComponent} from './misc/AuthComponent';
+export { ViewsComponent } from './stats/ViewsComponent'
+export { SubscribersComponent } from './stats/SubscribersComponent'
+export { WatchHoursComponent } from './stats/WatchHoursComponent'
+export { TotalViewsComponent } from './stats/TotalViewsComponent'
+export { CommentActivityComponent } from './stats/CommentActivityComponent'
+export { LatestVideoPerformanceComponent } from './summaries/LatestVideoPerformanceComponent'
+export { UserDetailsComponent } from './misc/UserDetailsComponent'
+export { ViewSelectorComponent } from './misc/ViewSelectorComponent'
+export { SignInComponent } from './misc/SignInComponent'
+export { SignOutComponent } from './misc/SignOutComponent'
+export { AuthComponent } from './misc/AuthComponent'

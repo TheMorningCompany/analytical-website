@@ -1,9 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react'
 
 export default function MonetizationPage() {
-    return (
-        <div>
-
-        </div>
-    );
+  return <div></div>
 }

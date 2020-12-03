@@ -1,16 +1,5 @@
-import React, {Component} from 'react';
-import {
-    CommentActivityComponent, LatestVideoPerformanceComponent,
-    SubscribersComponent,
-    TotalViewsComponent,
-    ViewsComponent,
-    WatchHoursComponent
-} from "../components";
+import React from 'react'
 
 export default function VideosPage() {
-    return (
-        <div>
-
-        </div>
-    );
+  return <div></div>
 }
