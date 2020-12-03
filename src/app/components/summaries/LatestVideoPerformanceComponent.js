@@ -10,6 +10,7 @@ export const LatestVideoPerformanceComponent = () => {
       <img
         className={'videoThumbnail'}
         src={'https://via.placeholder.com/300x166'}
+        alt={'Video Thumbnail'}
       />
       <h1 className={'videoTitle'}>{videoTitle}</h1>
       <p className={'explanation'}>{explanation}</p>

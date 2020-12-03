@@ -13,6 +13,7 @@ export const UserDetailsComponent = () => {
         }
         width={128}
         className={'profileImage'}
+        alt={'User Profile Picture'}
       />
       <h1>
         {stats.channelName === undefined ? 'Sign In!' : stats.channelName}
