@@ -1,5 +1,6 @@
 import React from 'react'
 import { kFormatter } from '../../../util/NumberUtil'
+import PropTypes from 'prop-types'
 
 export const WatchHoursComponent = ({ watchHours }) => {
   return (
@@ -10,4 +11,8 @@ export const WatchHoursComponent = ({ watchHours }) => {
       </p>
     </div>
   )
+}
+
+WatchHoursComponent.propTypes = {
+  watchHours: PropTypes.number,
 }

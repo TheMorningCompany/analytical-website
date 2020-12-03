@@ -1,5 +1,6 @@
 import React from 'react'
 import { kFormatter } from '../../../util/NumberUtil'
+import PropTypes from 'prop-types'
 
 export const CommentActivityComponent = ({ comments }) => {
   return (
@@ -10,4 +11,8 @@ export const CommentActivityComponent = ({ comments }) => {
       </p>
     </div>
   )
+}
+
+CommentActivityComponent.propTypes = {
+  comments: PropTypes.number,
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const SubscribersComponent = ({ subscribers }) => {
   return (
@@ -9,4 +10,8 @@ export const SubscribersComponent = ({ subscribers }) => {
       </p>
     </div>
   )
+}
+
+SubscribersComponent.propTypes = {
+  subscribers: PropTypes.number,
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { kFormatter } from '../../../util/NumberUtil'
+import PropTypes from 'prop-types'
 
 export const TotalViewsComponent = ({ views }) => {
   return (
@@ -10,4 +11,8 @@ export const TotalViewsComponent = ({ views }) => {
       </p>
     </div>
   )
+}
+
+TotalViewsComponent.propTypes = {
+  views: PropTypes.number,
 }
