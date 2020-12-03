@@ -1,0 +1,23 @@
+on: [push]
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
+
+      - name: deploy file to server
+        uses: PepperLola/SFTP-Action@v1
+        with:
+          username: '${{ secrets.USERNAME }}'
+          server: '${{ secrets.SERVER_IP }}'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: './build/*'
+          remote_path: '${{ secrets.REMOTE_PATH }}'
