@@ -13,7 +13,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: deploy file to server
+      - name: Deploy files to SFTP Server
         uses: PepperLola/SFTP-Action@v1
         with:
           username: '${{ secrets.USERNAME }}'
