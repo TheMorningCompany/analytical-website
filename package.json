@@ -20,9 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "check-lint": "eslint --format=pretty --ignore-path .gitignore --ext .js,.ts,.tsx,.jsx . && prettier --list-different --ignore-path .gitignore \"**/*.{j,t}s{x,}{on,}\"",
-    "eslint": "eslint --format=pretty --ignore-path .gitignore --fix --ext .js,.ts,.tsx,.jsx .",
-    "lint": "eslint --format=pretty --ignore-path .gitignore --fix --ext .js,.ts,.tsx,.jsx . && prettier --write --ignore-path .gitignore \"**/*.{j,t}s{x,}{on,}\""
+    "lint": "eslint --fix .",
+    "lint-check": "eslint ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,17 +39,12 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "6.6.0",
+    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-formatter-pretty": "4.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.21.5",
-    "prettier": "^2.2.1",
-    "prettier-eslint-cli": "^5.0.0",
-    "babel-plugin-const-enum": "1.0.1",
-    "babel-plugin-minify-dead-code-elimination": "0.5.1",
-    "babel-plugin-module-resolver": "4.0.0",
-    "babel-plugin-transform-inline-environment-variables": "0.4.3"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1"
   }
 }

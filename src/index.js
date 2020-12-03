@@ -13,7 +13,7 @@ async function renderApp() {
     <React.StrictMode>
       <App />
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById('root'),
   )
   stats = await getStats()
   if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {

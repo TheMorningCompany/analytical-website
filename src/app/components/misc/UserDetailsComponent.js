@@ -1,5 +1,6 @@
 import React from 'react'
 import { stats } from '../../../index'
+import PropTypes from 'prop-types'
 
 export const UserDetailsComponent = () => {
   return (
