@@ -22,7 +22,7 @@ body {
     right: 12px;
     top: 12px;
     cursor: pointer;
-    background-image: linear-gradient(to right, #C6668D, #D35B5B);
+    background-image: linear-gradient(to right, #DD459D, #E56262);
     color: #F4F4F4;
     text-transform: lowercase;
 }
@@ -248,7 +248,7 @@ body {
         color: white;
     }
     .signInComponent {
-        background-image: linear-gradient(to right, #C6668D, #D35B5B);
+        background-image: linear-gradient(to right, #DD459D, #E56262);
         color: white;
     }
     .latestVideoPerformanceComponent {
