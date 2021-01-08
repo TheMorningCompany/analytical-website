@@ -12,6 +12,7 @@
 body {
     background: #f4f4f4;
 }
+
 .signInComponent {
     position: absolute;
     font-size: 8px;
@@ -165,7 +166,7 @@ body {
     width: 100%;
     /*height: 100%;*/
     overflow: hidden;
-    border-radius: 0;
+    border-radius: 25;
     left: 0;
     transform: translate(-10%, -25%);
     filter: brightness(0.75);
@@ -182,7 +183,7 @@ body {
 .viewSelectorComponent {
     height: 100px;
     margin-left: 8%;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .viewSelectorComponent ul {
@@ -228,6 +229,13 @@ body {
 .viewSelectorComponent ul a {
     color: black;
     text-decoration: none;
+}
+
+.signInComponent:hover {
+
+    box-shadow: 0px 2.5px 25px 4px rgba(225, 85, 125, 0.25);
+
+    transition: box-shadow 0.25s ease-in-out;
 }
 
 @media(prefers-color-scheme: dark) {
