@@ -19,25 +19,22 @@ export const ViewSelectorComponent = () => {
       <div className={'component viewSelectorComponent'}>
         <ul>
           <Link className={'listEntry 0 selected'} to={{ pathname: '/' }}>
-            Dashboard
+            dashboard
           </Link>
           <Link className={'listEntry 1'} to={{ pathname: '/videos' }}>
-            Videos
+            videos
           </Link>
           <Link className={'listEntry 2'} to={{ pathname: '/playlists' }}>
-            Playlists
+            playlists
           </Link>
           <Link className={'listEntry 3'} to={{ pathname: '/analytics' }}>
-            Analytics
+            analytics
           </Link>
           <Link className={'listEntry 4'} to={{ pathname: '/commends' }}>
-            Comments
-          </Link>
-          <Link className={'listEntry 5'} to={{ pathname: '/subtitles' }}>
-            Subtitles
+            comments
           </Link>
           <Link className={'listEntry 6'} to={{ pathname: '/monetization' }}>
-            Monetization
+            monetization
           </Link>
         </ul>
       </div>

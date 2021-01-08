@@ -11,12 +11,13 @@ export const UserDetailsComponent = () => {
             ? ''
             : stats.channelProfilePicture
         }
-        width={128}
+      	width={128}
+	height={128}
         className={'profileImage'}
         alt={'User Profile'}
       />
       <h1>
-        {stats.channelName === undefined ? 'Sign In!' : stats.channelName}
+        {stats.channelName === undefined ? 'you are signed out' : stats.channelName}
       </h1>
     </div>
   )
