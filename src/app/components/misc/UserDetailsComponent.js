@@ -1,4 +1,5 @@
 import React from 'react'
+import defaultProfileImage from '../../../img/blankpfp.png'
 import { stats } from '../../../index'
 
 export const UserDetailsComponent = () => {
@@ -8,7 +9,7 @@ export const UserDetailsComponent = () => {
       <img
         src={
           stats.channelProfilePicture === undefined
-            ? ''
+            ? defaultProfileImage
             : stats.channelProfilePicture
         }
       	width={128}
