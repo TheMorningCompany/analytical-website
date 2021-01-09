@@ -23,9 +23,12 @@ body {
     right: 12px;
     top: 12px;
     cursor: pointer;
-    background-image: linear-gradient(to right, #DD459D, #E56262);
-    color: #F4F4F4;
+    background-color: #FFFFFF;
+    color: #0d0d0d;
     text-transform: lowercase;
+    box-shadow: 0;
+    transition: box-shadow 0.5s;
+    
 }
 
 .statsComponent {
@@ -35,6 +38,8 @@ body {
     border-radius: 35px;
     margin-top: 2%;
     overflow: hidden;
+    box-shadow: 0;
+    transition: box-shadow 0.5s;
 }
 
 .latestVideoPerformanceComponent {
@@ -44,7 +49,8 @@ body {
     background: #ffffff;
     border-radius: 35px;
     text-transform: lowercase;
-    
+    box-shadow: 0;
+    transition: box-shadow 0.5s;
 }
 
 .latestVideoPerformanceComponent .videoThumbnail {
@@ -212,7 +218,7 @@ body {
 .viewSelectorComponent ul a {
     position: relative;
     display: inline-block;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
 }
 
@@ -221,7 +227,7 @@ body {
     width: 100%;
     height: 2px;
     position: absolute;
-    background: #DE4996;
+    background-image: linear-gradient(to right, #DD459D, #E56262);
     top: 35px;
     left: 0;
 }
@@ -232,10 +238,14 @@ body {
 }
 
 .signInComponent:hover {
+   box-shadow: 0px 5px 30px 4px rgba(0, 0, 0, 0.15);
+}
 
-    box-shadow: 0px 2.5px 25px 4px rgba(225, 85, 125, 0.25);
-
-    transition: box-shadow 0.25s ease-in-out;
+.statsComponent:hover {
+    box-shadow: 0px 15px 30px 4px rgba(0, 0, 0, 0.1);
+}
+.latestVideoPerformanceComponent:hover {
+    box-shadow: 0px 15px 30px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media(prefers-color-scheme: dark) {
@@ -256,7 +266,7 @@ body {
         color: white;
     }
     .signInComponent {
-        background-image: linear-gradient(to right, #DD459D, #E56262);
+        background-color: #1d1d1d;
         color: white;
     }
     .latestVideoPerformanceComponent {
@@ -274,5 +284,14 @@ body {
     }
     .viewSelectorComponent ul::after {
         background: #1D1D1D;
+    }
+    .signInComponent:hover {
+        box-shadow: 0px 5px 30px 4px rgba(0, 0, 0, 1);
+    }
+    .statsComponent:hover {
+        box-shadow: 0px 15px 30px 4px rgba(0, 0, 0, 1);
+    }
+    .latestVideoPerformanceComponent:hover {
+        box-shadow: 0px 15px 30px 4px rgba(0, 0, 0, 1);
     }
 }
