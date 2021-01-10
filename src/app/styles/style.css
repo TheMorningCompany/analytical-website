@@ -28,7 +28,6 @@ body {
     text-transform: lowercase;
     box-shadow: 0;
     transition: box-shadow 0.5s;
-    
 }
 
 .statsComponent {
@@ -188,7 +187,7 @@ body {
 
 .viewSelectorComponent {
     height: 100px;
-    margin-left: 8%;
+    margin-left: 0%;
     margin-top: 50px;
 }
 
@@ -198,21 +197,22 @@ body {
     display: flex;
     position: relative;
     list-style: none;
-    gap: 30px;
+    gap: 100px;
     -webkit-flex: 1 1 auto;
-    -webkit-column-gap: 30px;
-    justify-content: left;
+    -webkit-column-gap: 100px;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .viewSelectorComponent ul::after {
     content: '';
-    width: 602px;
-    height: 2px;
+    width: 1000px;
+    height: 55px;
     position: absolute;
     background: #FFFFFF;
-    top: 35px;
-    z-index: -1;
+    top: -16px;
+    z-index: -100;
+    border-radius: 16px;
 }
 
 .viewSelectorComponent ul a {
@@ -220,21 +220,29 @@ body {
     display: inline-block;
     font-weight: 500;
     cursor: pointer;
+    z-index: 5;
 }
 
 .viewSelectorComponent ul a.selected::after {
     content: '';
-    width: 100%;
-    height: 2px;
+    width: 150px;
+    height: 47px;
     position: absolute;
     background-image: linear-gradient(to right, #DD459D, #E56262);
-    top: 35px;
-    left: 0;
+    top: -12px;
+    left: -34px;
+    border-radius: 13px;
+    z-index: -150;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.2);
+    
 }
 
 .viewSelectorComponent ul a {
     color: black;
     text-decoration: none;
+}
+.viewSelectorComponent ul a.selected {
+    color: white;
 }
 
 .signInComponent:hover {

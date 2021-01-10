@@ -22,8 +22,8 @@ export const AuthComponent = () => {
       >
         <h1>
           {accessToken !== '' && accessToken !== undefined
-            ? 'Successfully Authenticated'
-            : 'An Error Occurred...'}
+            ? ''
+            : 'there was an error signing you in.'}
         </h1>
       </div>
     )
