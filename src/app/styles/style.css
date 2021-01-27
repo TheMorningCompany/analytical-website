@@ -197,7 +197,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 1000px;
-    height: 100px;
+    height: 55px;
     margin-left: 0%;
     margin-top: 50px;
 }
@@ -207,41 +207,51 @@ body {
     display: -ms-flexbox;
     display: flex;
     position: relative;
+    padding: 0;
+    margin: 0;
     list-style: none;
     gap: 100px;
     width: 100%;
     height: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     -webkit-flex: 1 1 auto;
     -webkit-column-gap: 100px;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .viewSelectorComponent ul::after {
     content: '';
     width: 100%;
-    height: 55px;
+    height: 100%;
     position: absolute;
     background: #FFFFFF;
-    top: -16px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -100;
     border-radius: 16px;
 }
 
 .viewSelectorComponent ul a {
+    padding: 0;
+    margin: 0;
     position: relative;
     display: inline-block;
     font-weight: 500;
     cursor: pointer;
     z-index: 5;
+    transition: 0.5s;
+    color: black;
+    text-decoration: none;
 }
 
 .bgContainer {
   transition: 0.5s;
   width: 125px;
-  height: 50%;
+  height: 80%;
   left: 0;
   position: absolute;
 }
@@ -249,9 +259,6 @@ body {
 .bg { 
     width: 100%;
     height: 100%;
-    /*left: 50%;*/
-    /*top: 50%;*/
-    transform: translate(25%, 25%);
     background-image: linear-gradient(to right, #DD459D, #E56262);
     border-radius: 13px;
     z-index: -100;
@@ -259,33 +266,29 @@ body {
 }
 
 .entry-0.selected ~ .bgContainer {
-  transform: translate(1.5rem, -50%);
+  transform: translate(1rem, 0);
 }
 
 .entry-1.selected ~ .bgContainer {
-  transform: translate(11.75rem, -50%);
+  transform: translate(11.25rem, 0);
 }
 
 .entry-2.selected ~ .bgContainer {
-  transform: translate(21.25rem, -50%);
+  transform: translate(20.75rem, 0);
 }
 
 .entry-3.selected ~ .bgContainer {
-  transform: translate(31.4rem, -50%);
+  transform: translate(30.8rem, 0);
 }
 
 .entry-4.selected ~ .bgContainer {
-  transform: translate(42rem, -50%);
+  transform: translate(41.4rem, 0);
 }
 
 .entry-5.selected ~ .bgContainer {
-  transform: translate(53.8rem, -50%);
+  transform: translate(53.25rem, 0);
 }
 
-.viewSelectorComponent ul a {
-    color: black;
-    text-decoration: none;
-}
 .viewSelectorComponent ul a.selected {
     color: white;
 }
